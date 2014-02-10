@@ -1,0 +1,42 @@
+[
+    {
+        "id": "thika-high-school",
+        "name": "Thika High School",
+        "county": "Kiambu",
+        "town": "Thika",
+        "population": "650",
+        "mean": "6.5",
+        "prevMean": "6.8",
+        "imgUrl": "img/thika-high-school.jpg"
+    },
+    {
+        "id": "mangu-high-school",
+        "name": "Mang'u High School",
+        "county": "Kiambu",
+        "town": "Thika",
+        "population": "1050",
+        "mean": "9.4",
+        "prevMean": "9.1",
+        "imgUrl": "img/mangu-high-school.jpg"
+    },
+    {
+        "id": "nyeri-high-school",
+        "name": "Nyeri High School",
+        "county": "Nyeri",
+        "town": "Nyeri",
+        "population": "890",
+        "mean": "8.6",
+        "prevMean": "8.1",
+        "imgUrl": "img/nyeri-high-school.jpg"
+    },
+    {
+        "id": "alliance-high-school",
+        "name": "Alliance High School",
+        "county": "Nairobi",
+        "town": "Kikuyu",
+        "population": "1200",
+        "mean": "9.6",
+        "prevMean": "9.2",
+        "imgUrl": "img/nyeri-high-school.jpg"
+    }
+]

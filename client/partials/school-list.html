@@ -1,0 +1,123 @@
+<nav class="container well well-clear margin-bottom-remove">
+<div class="row-fluid clearfix">            
+    <ul class="breadcrumb margin-bottom-remove">
+    <li><a href="http://localhost/schools_parade/app"><i class="icon-home"></i></a> <span class="divider">/</span></li>
+    <li class="active"><a href="#/schools">Schools</a></li>
+    <li class="float-right">
+        <span class="search-count">Showing {{schools.length}} schools</span>
+    </li>
+    </ul>
+</div>
+</nav>
+
+<section class="container well well-clear">
+<div class="row-fluid">
+    <aside class="span3"> 
+    <form class="form-horizontal well well-box">        
+        <div class="well-header">
+        <h4>Search by school</h4>
+        </div>
+        
+        <div class="well-content">
+        <div class="control-group">
+            <div class="row-fluid">
+                <input type="text" class="span12" placeholder="Search by school name" ng-model="queryName">
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <div class="row-fluid">
+                <select class="span12" ng-model="orderProp">
+                    <option value="name" selected>Alphabetical</option>
+                    <option value="name">Newest</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <div class="row-fluid">
+                <select class="span12">
+                    <optgroup title="Defaults">
+                        <option disabled selected>Search by county</option>
+                        <option>All year long</option>
+                        <option ng-repeat="school in schools">{{school.county}}</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <div class="row-fluid">
+                <select class="span12">
+                    <optgroup title="Defaults">
+                        <option disabled selected>Minimum population</option>
+                        <option>All mean grades</option>
+                    </optgroup>
+                    <optgroup title="Mean Grades">
+                        <option>Above 8.5</option>
+                        <option>Above 8</option>
+                        <option>Above 7.5</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <div class="row-fluid">
+                <select class="span12">
+                    <optgroup title="Defaults">
+                        <option disabled selected>Aggregate score</option>
+                        <option>All mean grades</option>
+                    </optgroup>
+                    <optgroup title="Mean Grades">
+                        <option>Above 8.5</option>
+                        <option>Above 8</option>
+                        <option>Above 7.5</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-block btn-primary">Search</button>
+        </div>
+    </form>
+    </aside>
+    
+    <div class="row-fluid span9">
+    <table class="table table-bordered table-padded">
+        <thead>
+            <tr>
+                <th class="span6">School Name</th>
+                <th class="span2">Mean 2013</th>
+                <th class="span2"></th>
+            </tr>
+        </thead>
+        <tbody class="schools" ng-model="schoolsList">
+            <tr ng-repeat="school in schools | filter:queryName | orderBy:orderProp">
+                <td>
+                <div class="media">
+                    <div class="pull-left">
+                        <img class="media-object" ng-src="{{school.imgUrl}}">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <a href="#/schools/{{school.id}}">{{school.name }}</a>
+                        </h4>
+                        <p><span><strong>County: </strong>{{school.county}}</span>; <span><strong>Town: </strong>{{school.town}}</span>; <span><strong>Population:</strong> <em>{{school.population}}</em></span></p>
+                    </div>
+                </div>
+                </td>
+                <td class="span2">
+                    <h1 class="text-light">{{school.mean}}</h1>
+                    <span class="badge badge-info">dropped</span> <span>{{school.prevMean - school.mean}}</span>
+                </td>
+                <td class="span2">
+                <button class="btn btn-primary btn-block" onclick="location.href='schools_compare.php'">Compare</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    
+    </div>
+</section>

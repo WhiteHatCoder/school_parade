@@ -1,0 +1,71 @@
+<nav class="navbar navbar-inverse navbar-fixed-top bg-main">
+    <div class="">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/"><img src="client/img/logo.png" alt="Schools parade" class="img-responsive"></a>
+        </div>
+        
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav hidden">
+            <li class="active"><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="full-page bg-clear">
+    <div class="height-1-1 bg-graph"> 
+        <form class="form-horizontal col-lg-offset-4 col-lg-3 data-form" ng-controller="signInCtrl"  name="signIn-form"  role="form" ng-submit="signIn()" method="post" novalidate>
+        <div class="form-group">
+            <label for="inputUsername" class="col-lg-3 control-label">Username:</label>
+            <div class="col-lg-9">
+                <input type="text" class="form-control" id="inputUsername" placeholder="Username" name="username" ng-model="user.username" required>
+                <!--<p class="form-control-static">email@example.com</p>-->
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-lg-3 control-label">Password:</label>
+            <div class="col-lg-9">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" ng-model="user.password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-12">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-12 text-center">
+                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+            </div>
+        </div>
+        <hr>
+        <small>
+        <p><strong>Forgot Password?</strong></p>
+        <p class="text-muted">No problem, <a href="#">click here</a> to get a new password.</p>
+        </small>
+        </form>
+    </div>
+</section>

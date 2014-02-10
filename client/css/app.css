@@ -1,0 +1,485 @@
+body
+{
+/*    background: url('.-./img/brushed.png');*/
+    background: #FFF;
+}
+.full-page
+{
+    position: absolute;
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.height-1-1
+{
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+.col-center
+{
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.input-inline
+{
+    display:inline;
+    padding:8px;
+    max-width:60px;
+    margin-right:20px;
+}
+
+
+
+/* =======================
+Brading 
+========================== */
+.brand
+{
+    line-height: 30px;
+}
+.bg-main, .btn-success, .list-group-header
+{
+    background: #699700;
+    color: #FFF;
+}
+.bg-main a
+{
+    color:#FFF;
+}
+.bg-main .nav-pills .active a
+{
+    background: #BBCA9A;
+    color: #000;
+}
+.bg-main .nav-pills a:hover
+{
+    background: #687E3A;
+    color: #FFF;
+}
+.bg-clear
+{
+    background: url('../img/people-walking.jpg');
+    background-clip: border-box;
+    background-size: cover;
+}
+.bg-graph
+{
+    background: url('../img/graph-tile.png');
+}
+.bg-inner
+{
+    background: rgba(0,0,0,0.25);
+}
+.btn-group .btn, .btn-success
+{
+    border-color: rgba(0,0,0,0.25);
+}
+
+
+/* ========================
+Navbar and headers
+========================== */
+.navbar
+{
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    border-radius: 0px;
+    color: #FFF;
+}
+.navbar a
+{
+    color: #FFF !important;
+}
+.navbar-brand img
+{
+    height: 20px;
+}
+.navbar-form .form-control
+{
+    border: 1px solid rgba(0,0,0,0.75) !important;
+}
+
+.nav-pills.nav-bordered a:hover, .nav-pills.nav-bordered li.active a
+{
+    background: none;
+    border-bottom: 3px solid;
+    border-radius: 0px;
+}
+.nav-pills.nav-bordered li.active a
+{
+    color: #999;
+}
+
+.page-header
+{
+    padding: 8px;
+}
+.page-header-element > *
+{
+    line-height: 50px;
+}
+.page-header-element h1
+{
+    margin: 0px;
+}
+
+
+/* ========================
+Badges and labels
+========================== */
+.badge
+{
+    padding: 5px 10px !important;
+}
+.badge-primary
+{
+    background: #08F;
+}
+.badge-default
+{
+    background: #CCC;
+}
+[class*="label-"]
+{
+    padding: 0.25em 0.5em;
+}
+
+
+/* ========================
+Spacer
+========================== */
+.spacer
+{
+    height: 50px;
+}
+.h-spacer
+{
+    display: inline-table;
+    width: 0px;
+    padding: 0px 10px;
+}
+.l-50
+{
+    padding: 15px 0px;
+    line-height: 20px;
+}
+
+/* ========================
+Visibility states
+========================== */
+.hidden
+{
+    visibility:hidden;
+}
+
+
+/* ========================
+Panel
+========================== */
+.panel, .panel .well
+{
+    border-color: #DDD;
+}
+.panel .well, .panel .chart-container
+{
+    margin: 15px -15px;
+    border-radius: 0px;
+    box-shadow: none;
+    border-width: 1px 0px;
+}
+.panel .table
+{
+    margin: 15px 0px 0px;
+}
+.panel .table thead th
+{
+    border-bottom: 0px;
+}
+.data-form
+{
+    background: #FFF;
+    padding: 35px 25px 25px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    -ms-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+List
+========================== */
+.module-plate
+{
+    background: url('../img/tiny_grid.png');
+    display: table;
+    width: 100%;    
+    padding: 26px 7px 26px 11px !important;
+}
+.list-group-item
+{
+    padding-top: 10px !important;
+    padding-bottom: 10px;
+    border-color: #DDD;
+}
+.list-group-item.media
+{
+    margin: 0px;
+    padding: 15px 0px 5px 15px !important;
+    border-top: 0px;
+}
+.list-group.list-alternating .list-group-item.media:nth-child(even)
+{
+    background: #EEE;
+}
+.list-group-item label
+{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin: 0px;
+}
+.list-group-item:first-child
+{
+    border-radius: 3px 3px 0px 0px !important;
+}
+.list-group-item:last-child
+{
+    border-radius: 0px 0px 3px 3px !important;
+}
+.list-group-item *
+{
+    font-weight: normal;
+}
+.list-group-item .table th
+{
+    padding: 15px 10px;
+    font-weight: bold;
+    text-transform:uppercase;
+}
+.list-group-item .table td
+{
+    vertical-align:middle;
+}
+.list-group-item .table td:first-child
+{
+    padding-left: 20px !important;
+}
+.list-group-item.active, .list-group-item.active:hover
+{
+    text-decoration: line-through;
+    background: #FFF;
+    color: inherit;
+    border-color: #DDD;
+}
+.list-group-header
+{
+    border-color: #699700 !important;
+    padding: 0px !important;
+    width: 100%;
+}
+.list-group-header + .list-group-item
+{
+    border-top: 0px;
+    padding-top: 1px;
+}
+.list-group-header .title
+{
+    float: left;
+    font-size: 16px;
+    margin: 0px;
+    line-height: 40px;
+    padding: 0px 15px;
+}
+.list-group-header .btn-group
+{
+    float: right;
+    margin: 0px;
+}
+.list-group-header .btn-group .btn
+{
+    color: rgba(0,0,0,0.25);
+    border-top: 0px;
+    border-bottom: 0px;
+    border-radius: 0px;
+    border-color: rgba(0,0,0,0.15);
+    line-height: 40px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+.list-group-header .btn-group .btn:hover
+{
+    color: #FFF;
+}
+.list-group-header .btn-group .btn:first-child
+{
+    border-left: 0px;
+} 
+.list-group-header .btn-group .btn:last-child
+{
+    border-right: 0px;
+} 
+.checkbox.active *
+{
+    color:#CCC;
+}
+
+.module
+{
+    border: 1px solid #CCC;
+    border-radius: 3px;
+}
+[class*="module-"]
+{
+    padding: 15px;
+}
+.module-header
+{
+    border-bottom: 1px solid #CCC;
+}
+
+/*=========================
+Chart
+=========================*/
+.chart
+{
+    background: url('../img/tiny_grid.png');
+    min-height: 26px;
+    line-height: 26px;
+    padding: 26px 26px 0px;
+    position: relative;
+    color: #999;
+}
+.chart *
+{
+    margin: 0px;
+    padding:0px;
+}
+.chart .legend, .chart .graph
+{
+    position: relative;
+}
+.chart .data-legend
+{
+    padding: 15px 15px 25px !important;
+}
+.chart .data-label
+{
+    padding: 0px;
+    padding-left: 15px;
+    height: 25px;
+    font-size: 10px;
+}
+.chart .data-label:not(.alpha)
+{
+    border-bottom: 1px solid #E5E5E5;
+}
+.chart .graph
+{
+    position: absolute;
+    display: table;
+    bottom: 0px;
+    width: 100%;
+    height: 350px;
+}
+.chart .graph .bar
+{
+    margin: 0px;
+    vertical-align: bottom;
+    position:relative;
+    display: table-cell;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 0px;
+    padding-right: 15px;
+}
+.chart .graph .bar-strip
+{
+    width: 50%;
+    margin: 0px 25%;
+    display: table;
+    background: #CCC;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 3px 3px 0px 0px;
+    z-index: 1;
+}
+.chart .graph .bar-strip:before
+{
+    content: "";
+    width: 2px;
+    height: 5px;
+    display: table;
+    background: #F5F5F5;
+    position: absolute;
+    z-index: 1;
+    border-radius: 5px;
+    left: 50%;
+    right: 50%;
+    margin-top: -5px;
+}
+.chart .graph .bar-strip:after
+{
+    content: "";
+    width: 2px;
+    height: 325px;
+    display: table;
+    background: #CCC;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    right: 50%;
+    z-index: 0;
+}
+.chart .graph .bar:last-child
+{
+    padding-right: 15px;
+}
+.chart .graph .bar [class*="data-title"]
+{
+    line-height: 25px !important;
+    font-family: verdana;
+    font-weight: 400px !important;
+    text-transform:uppercase;
+    text-align: center;
+    padding-right: 10px;
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    border-bottom: 1px dashed #CCC;
+}
+.chart .graph .bar:not(:first-child) [class*="data-title"]:before
+{
+    content: "";
+    width: 6px;
+    height: 6px;
+    display: table;
+    background: #CCC;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    right: 50%;
+    bottom: 0px;
+    margin-bottom: -3px;
+    margin-left: -6px;
+}
+.chart .bar .data-title-small
+{
+    font-size: 10px;
+}
+.chart .line
+{
+    border-radius: 3px;
+    height: 3px;
+    width: 3px;
+    background: #000;
+}
+
+/*select
+{
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding: 5px;
+}*/

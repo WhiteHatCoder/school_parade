@@ -1,0 +1,281 @@
+<nav class="container hidden">
+<div class="row-fluid clearfix">            
+    <ul class="breadcrumb margin-bottom-remove">
+    <li><a href="http://localhost/schools_parade/app"><i class="glyphicon glyphicon-home"></i></a></li>
+    <li><a href="#/schools">Schools</a></li>
+    <li class="active">{{school.name}}</li>
+    </ul>
+</div>
+</nav>
+
+<section class="col-lg-12">
+    <div class="chart-container">
+        <div class="page-header clearfix row">
+            <h2 class="align-left col-lg-6"><small>{{school.name}}'s Performance Analysis</small></h2>
+            <div class="align-right col-lg-6">
+                <div class="badge badge-default">All results</div>
+                <div class="badge badge-primary">End of term</div>
+                <div class="badge badge-default">CATs</div>
+                </div>
+            </div>
+        <table class="chart col-lg-9">
+            <tr>
+                <td colspan="13" class="data-label alpha">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">12</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">11</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">10</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">9</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">8</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">7</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">6</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">5</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">4</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">3</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">2</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">1</td>
+            </tr>
+            <tr>
+                <td colspan="13" class="data-label">0</td>
+            </tr>
+            <tr class="graph">
+                <td class="bar">
+                    <span class="data-title">&nbsp;</span>
+                </td>
+                <td class="bar">
+                    <span class="data-title-small">Mar</span>
+                    <div class="bar-strip" style="height: {{5.2/12*325}}px;"></div>
+                </td>
+                <td class="bar">
+                    <span class="data-title-small">Jul</span>
+                    <div class="bar-strip" style="height: {{6.8/12*325}}px;"></div>
+                </td>
+                <td class="bar">
+                    <span class="data-title-small">Nov</span>
+                    <div class="bar-strip" style="height: {{5.6/12*325}}px;"></div>
+                </td>
+                <td class="bar">
+                    <span class="data-title">2010</span>
+                    <div class="bar-strip" style="height: {{(5.2+6.8+5.6)/(12*3)*325}}px;"></div>
+                </td>
+                <td class="bar">
+                    <span class="data-title-small">Mar</span>
+                    <div class="bar-strip" style="height: {{6.9/12*325}}px;"></div>
+                </td>
+                <td class="bar">
+                    <span class="data-title-small">Jul</span>
+                    <div class="bar-strip" style="height: {{7.0/12*325}}px;"></div>
+                </td>
+                <td class="bar">
+                    <span class="data-title-small">Nov</span>
+                    <div class="bar-strip" style="height: {{9.3/12*325}}px;"></div>
+                </td>
+                <td class="bar">
+                    <span class="data-title">2011</span>
+                    <div class="bar-strip" style="height: {{(6.9+7.0+9.3)/(12*3)*325}}px;"></div>
+                </td>
+                <td class="bar">
+                    <span class="data-title-small">Mar</span>
+                    <div class="bar-strip" style="height: {{8.2/12*325}}px;"></div>
+                </td>
+                <td class="bar">
+                    <span class="data-title-small">Jul</span>
+                    <div class="bar-strip" style="height: {{8.9/12*325}}px;"></div>
+                </td>
+                <td class="bar">
+                    <span class="data-title-small">Nov</span>
+                    <div class="bar-strip" style="height: {{10.2/12*325}}px;"></div>
+                </td>
+                <td class="bar">
+                    <span class="data-title">2012</span>
+                    <div class="bar-strip" style="height: {{(8.2+8.9+10.2)/(12*3)*325}}px;"></div>
+                </td>
+            <tr>
+        </table>
+    </div> <!-- !Chart container -->
+</section>
+
+<section class="container hidden">
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="media">
+        <a class="pull-left">
+        <img class="media-object" src="img/media.png" alt="...">
+        </a>
+        <div class="media-body">
+        <h3 class="media-heading">{{school.name}}</h3>
+        <article ng-bind-html="school.about"></article>
+<!--        <small>{{school.awards.2012.join(', ')}}</small>-->
+        </div>
+        </div>
+        
+        <div class="chart-container">
+            <table class="chart">
+                <tr class="legend">
+                    <thead>
+                        <th class="text-left data-legend">Performance Analysis</th>
+                        <th class="text-right data-legend">
+                            <div class="badge badge-default">All results</div>
+                            <div class="badge badge-primary">End of term</div>
+                            <div class="badge badge-default">CATs</div>
+                        </th>
+                    </thead>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">12</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">11</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">10</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">9</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">8</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">7</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">6</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">5</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">4</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">3</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">2</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">1</td>
+                </tr>
+                <tr>
+                    <td colspan="13" class="data-label">0</td>
+                </tr>
+                <tr class="graph">
+                    <td class="bar">
+                        <span class="data-title">&nbsp;</span>
+                    </td>
+                    <td class="bar">
+                        <span class="data-title-small">Mar</span>
+                        <div class="bar-strip" style="height: {{5.2/12*325}}px;"></div>
+                    </td>
+                    <td class="bar">
+                        <span class="data-title-small">Jul</span>
+                        <div class="bar-strip" style="height: {{6.8/12*325}}px;"></div>
+                    </td>
+                    <td class="bar">
+                        <span class="data-title-small">Nov</span>
+                        <div class="bar-strip" style="height: {{5.6/12*325}}px;"></div>
+                    </td>
+                    <td class="bar">
+                        <span class="data-title">2010</span>
+                        <div class="bar-strip" style="height: {{(5.2+6.8+5.6)/(12*3)*325}}px;"></div>
+                    </td>
+                    <td class="bar">
+                        <span class="data-title-small">Mar</span>
+                        <div class="bar-strip" style="height: {{6.9/12*325}}px;"></div>
+                    </td>
+                    <td class="bar">
+                        <span class="data-title-small">Jul</span>
+                        <div class="bar-strip" style="height: {{7.0/12*325}}px;"></div>
+                    </td>
+                    <td class="bar">
+                        <span class="data-title-small">Nov</span>
+                        <div class="bar-strip" style="height: {{9.3/12*325}}px;"></div>
+                    </td>
+                    <td class="bar">
+                        <span class="data-title">2011</span>
+                        <div class="bar-strip" style="height: {{(6.9+7.0+9.3)/(12*3)*325}}px;"></div>
+                    </td>
+                    <td class="bar">
+                        <span class="data-title-small">Mar</span>
+                        <div class="bar-strip" style="height: {{8.2/12*325}}px;"></div>
+                    </td>
+                    <td class="bar">
+                        <span class="data-title-small">Jul</span>
+                        <div class="bar-strip" style="height: {{8.9/12*325}}px;"></div>
+                    </td>
+                    <td class="bar">
+                        <span class="data-title-small">Nov</span>
+                        <div class="bar-strip" style="height: {{10.2/12*325}}px;"></div>
+                    </td>
+                    <td class="bar">
+                        <span class="data-title">2012</span>
+                        <div class="bar-strip" style="height: {{(8.2+8.9+10.2)/(12*3)*325}}px;"></div>
+                    </td>
+                <tr>
+            </table>
+        </div> <!-- !Chart container -->
+        
+        <h4>Results for {{school.name}}</h4>
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+            <th>Year</th>
+            <th>Results title</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td rowspan="3">2010</td>
+            <td>End of Term 1</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            </tr>
+            <tr>
+            <td>Cat 2</td>
+            <td>Otto</td>
+            <td>@TwBootstrap</td>
+            </tr>
+            <tr>
+            <td>Cat 1</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            </tr>
+            <tr>
+            <td>3</td>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+</section>

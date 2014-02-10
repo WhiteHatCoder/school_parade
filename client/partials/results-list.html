@@ -1,0 +1,88 @@
+<nav class="navbar navbar-inverse navbar-fixed-top bg-main">
+    <div class="col-lg-12">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/"><img src="client/img/logo.png" alt="Schools parade" class="img-responsive"></a>
+        </div>
+        
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav hidden">
+            <li class="active"><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            </li>
+        </ul>
+            
+        <form class="navbar-form navbar-left" role="search">
+            <input type="text" class="form-control" placeholder="Search">
+        </form>
+        
+        <p class="navbar-text navbar-right">
+            <a href="#/login">Logout</a>
+        </p>
+        </div>
+    </div>
+</nav>
+
+<p class="spacer">&nbsp;</p>
+
+<section>
+    <header class="col-lg-12">
+        <div class="page-header row">
+            <div class="col-lg-6 col-md-6 page-header-element">
+                <h1>Dashboard</h1>
+            </div>
+            
+            <div class="col-lg-6 col-md-6 text-right page-header-element">
+            <div class="btn-group align-right">
+                <a href="#/create-result" class="btn btn-success">Create</a>
+            </div>
+            </div>
+        </div>
+        
+        <nav class="col-lg-12">
+            <ul class="nav nav-pills nav-bordered">
+                <li class="active"><a href="">Subject Performance</a></li>
+                <li><a href="">Class Performance</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="module-plate col-lg-12">
+        <div class="col-lg-12">
+            <ul class="list-group">
+                <li class="list-group-item list-group-header clearfix">
+                    <h2 class="title">Results</h2>
+                    <div class="btn-group">
+                        <a class="btn"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                        <a class="btn"><span class="glyphicon glyphicon-remove"></span></a>
+                    </div>
+                </li>
+               
+                <li class="list-group-item media" ng-repeat="class in classes">
+                    <p class="col-lg-1 col-md-1"><span class="label label-warning">70% done</span></p>
+                    <p class="col-lg-4 col-md-4">BGHS - {{class.class}} - {{class.exam}}</p>
+                    <p class="col-lg-7 col-md-7 text-right">
+                        <small class="btn-sm text-muted">
+                            <a  ng-click="updateResultParam(class.class_id,class.exam_id,'edit',class.class,class.exam)" href="#/class-result">View results</a>
+                            <span class="h-spacer"> | </span>
+                            <a href="#/report/:ExamId">Generate Exam Report</a>
+                            <span class="h-spacer"> | </span>
+                            <a href="#/report/:ClassId">Generate Student Reports</a>
+                            <span class="h-spacer"> | </span>
+                            Download (<a ng-href="http://localhost/school_parade/api/teacher/get_class_result_excel/{{class.class_id}}/{{class.exam_id}}">Exel</a>) or (<a href="http://localhost/school_parade/api/teacher/create_pdf">PDF</a>)
+                        </small>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

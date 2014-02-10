@@ -1,0 +1,171 @@
+<nav class="navbar navbar-inverse navbar-fixed-top bg-main">
+    <div class="col-lg-12">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/"><img src="client/img/logo.png" alt="Schools parade" class="img-responsive"></a>
+        </div>
+        
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav hidden">
+            <li class="active"><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            </li>
+        </ul>
+            
+        <form class="navbar-form navbar-left" role="search">
+            <input type="text" class="form-control" placeholder="Search">
+        </form>
+        
+        <p class="navbar-text navbar-right">
+            <a href="#/login">Logout</a>
+        </p>
+        </div>
+    </div>
+</nav>
+
+<p class="spacer">&nbsp;</p>
+
+<section>
+    <header class="col-lg-12">
+        <div class="page-header row">
+            <div class="col-lg-6 col-md-6 page-header-element">
+                <h1>Dashboard</h1>
+            </div>
+            
+            <div class="col-lg-6 col-md-6 text-right page-header-element">
+            <div class="btn-group align-right">
+                <a href="#/create-result" class="btn btn-success">Create</a>
+            </div>
+            </div>
+        </div>
+        
+        <nav class="col-lg-12">
+            <ul class="nav nav-pills nav-bordered">
+                <li class="active"><a href="">Subject Performance</a></li>
+                <li><a href="">Class Performance</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="chart">Loading chart . . .</section>
+    
+    <div class="module-plate col-lg-12">
+        <div class="col-lg-9">
+            <ul class="list-group">
+                <li class="list-group-item list-group-header clearfix">
+                    <h2 class="title">Results</h2>
+                    <div class="btn-group">
+                        <a class="btn"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                        <a class="btn"><span class="glyphicon glyphicon-remove"></span></a>
+                    </div>
+                </li>
+                <li class="list-group-item media" ng-repeat="class in classes">
+                    <p class="col-lg-1 col-md-1"><span class="label label-warning">70% done</span></p>
+                    <p class="col-lg-4 col-md-4">BGHS - {{class.class}} - {{class.exam}}</p>
+                    <p class="col-lg-7 col-md-7 text-right">
+                        <small class="btn-sm text-muted">
+                            <a href="#/results-list">Edit results</a>
+                            <span class="h-spacer"> | </span>
+                            Download (<a href="http://localhost/school_parade/api/generateExcel/">Exel</a>) or (<a href="http://localhost/school_parade/api/pdf/">PDF</a>)
+                        </small>
+                    </p>
+                </li>
+<!--
+                <li class="list-group-item media">
+                    <p class="col-lg-1 col-md-1"><span class="label label-primary">Complete</span></p>
+                    <p class="col-lg-5 col-md-5">BGHS - Form 3, 2013 - CAT 3</p>
+                    <p class="col-lg-6 text-right">
+                        <small class="btn-sm text-muted">
+                            <a href="#/results/:ResultsId">Edit results</a>
+                            <span class="h-spacer"> | </span>
+                            <a href="#">Create Report Form</a>
+                            <span class="h-spacer"> | </span>
+                            Download (<a href="">Exel</a>) or (<a href="">PDF</a>)
+                        </small>
+                    </p>
+                </li>
+                 <li class="list-group-item media">
+                    <p class="col-lg-1 col-md-1"><span class="label label-primary">Complete</span></p>
+                    <p class="col-lg-4 col-md-4">BGHS - Form 3, 2013 - CAT 2</p>
+                    <p class="col-lg-7 text-right">
+                        <small class="btn-sm text-muted">
+                            <a href="#/results/:ResultsId">Edit results</a>
+                            <span class="h-spacer"> | </span>
+                            <a href="">Download</a> or <a href="">Edit</a> Report Form
+                            <span class="h-spacer"> | </span>
+                            Download (<a href="">Exel</a>) or (<a href="">PDF</a>)
+                        </small>
+                    </p>
+                </li>
+-->
+            </ul>
+        </div>
+        <div class="col-lg-3">
+            <ul class="list-group">
+                <li class="list-group-item list-group-header clearfix">
+                    <h2 class="title">Tasks</h2>
+                    <div class="btn-group">
+                        <a class="btn"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                        <a class="btn"><span class="glyphicon glyphicon-remove"></span></a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <label class="checkbox">
+                    <input type="checkbox" value="">
+                    <a href="#">Math results not completed</a><br>
+                    <small>Form 2 - End of Term 3</small>
+                    </label>
+                </li>
+                <li class="list-group-item">
+                    <label class="checkbox">
+                    <input type="checkbox" value="">
+                    <a href="#">Math results not completed</a><br>
+                    <small>Form 2 - End of Term 3</small>
+                    </label>
+                </li>
+                <li class="list-group-item">
+                    <label class="checkbox">
+                    <input type="checkbox" value="">
+                    <a href="#">Math results not completed</a><br>
+                    <small>Form 2 - End of Term 3</small>
+                    </label>
+                </li>
+                <li class="list-group-item active">
+                    <label class="checkbox">
+                    <input type="checkbox" value="" checked>
+                    <a href="#">Math results not completed</a><br>
+                    <small>Form 2 - End of Term 3</small>
+                    </label>
+                </li>
+            </ul>
+            <p>&nbsp;</p>
+            <div class="list-group">
+                <div class="list-group-item list-group-header clearfix">
+                    <h2 class="title">Exams</h2>
+                    <div class="btn-group">
+                        <a class="btn"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                        <a class="btn"><span class="glyphicon glyphicon-remove"></span></a>
+                    </div>
+                </div>
+                <a href="#" class="list-group-item media">
+                    <div class="pull-left" href="#">
+                        <img class="media-object" src="img/doc.png" alt="...">
+                    </div>
+                    <div class="media-body">
+                        <p><span class="text-primary">Mang'u High School</span><br>
+                        <small>Form 2 - End of Term 3</small></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
