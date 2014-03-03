@@ -4,15 +4,15 @@
 
 var schoolsparadeControllers = angular.module('schoolsparadeControllers', []);
 /*****Default login Controller for all users ***/
-schoolsparadeControllers.controller('signInCtrl', ['$scope', 'Api', 'webStorage', '$http', '$location', '$rootScope','appSettings',
-    function ($scope, Api, webStorage, $http, $location, $rootScope,appSettings)
+schoolsparadeControllers.controller('signInCtrl', ['$scope', 'Api', 'webStorage', '$http', '$location', '$rootScope', 'appSettings',
+    function ($scope, Api, webStorage, $http, $location, $rootScope, appSettings)
     {
         $scope.user = {};
         $scope.signIn = function () {
             console.log($.param($scope.user));
             $http({
                 method: 'POST',
-                url: appSettings.SCHOOL_API+'/teacher/login/',
+                url: appSettings.SCHOOL_API + '/teacher/login/',
                 data: $scope.user, // pass in data as strings
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -20,11 +20,13 @@ schoolsparadeControllers.controller('signInCtrl', ['$scope', 'Api', 'webStorage'
             })
                 .success(function (data) {
                     if (data['success'] == 'teacher') {
-                        webStorage.add("userData", data['data'])
+                        //$window.sessionStorage.dataUs=data['data'];
+                        webStorage.add("userData", data);
                         $rootScope.loggedin = true;
                         $location.path("/");
                         //Redirect to                
                     } else {
+                        webStorage.add("userData", data)
                         console.log(data);
                         $scope.loggedin = false;
                     }
@@ -76,8 +78,8 @@ schoolsparadeControllers.controller('tchCtrl', ['$scope', 'Api',
 }]);
 
 /********ResultList controller for listing results that exists for current teacher from the classes taught***/
-schoolsparadeControllers.controller('ResultListCtrl', ['$scope', 'Api', 'SharedData',
-    function ($scope, Api, SharedData)
+schoolsparadeControllers.controller('ResultListCtrl', ['$scope', 'Api', 'SharedData', 'webStorage',
+    function ($scope, Api, SharedData, webStorage)
     {
         $scope.updateResultParam = function (classId, examId, viewMode, className, exam) {
             SharedData.setClassId(classId);
@@ -86,9 +88,29 @@ schoolsparadeControllers.controller('ResultListCtrl', ['$scope', 'Api', 'SharedD
             SharedData.setViewMode(viewMode);
             SharedData.setExam(exam);
         }
+
+        var returnedData = webStorage.get('userData');
+        var teacherData = new Object();
+        teacherData.id = returnedData.data[0].id;
+        teacherData.name = returnedData.data[0].teacher_name;
+        teacherData.schId = returnedData.data[0].sch_id;
+        teacherData.role = returnedData.data[0].role;
+        teacherData.clases = returnedData.data[0].classes; //Array of classes
+
+        //Get all Classes taught
+        angular.forEach(returnedData.data[0].classes, function (data) {
+            //Get classes and assign to teacherObject;
+        })
+        //Get all Subjects Taught
+        console.log(teacherData);
+
+
+        //console.log(returnedData.data[0]);
+        var classesTaught = returnedData.data[0].classes;
+        //var  teacherSch=teacher_data.data[0].sch
         //Get all results list associated with this teacher
         $scope.classes = Api.appData.query({
-            method: 'get_all_class_taught'
+            method: 'get_all_class_taught',id1:teacherData.schId
         });
         //Get all results in excel format
         $scope.downloadExcel = function (classId, examId) {
@@ -112,23 +134,23 @@ schoolsparadeControllers.controller('ResultListCtrl', ['$scope', 'Api', 'SharedD
 
 
 /********Result controller for fetching results data from the server based on the data updated by the resultListCtrl***/
-schoolsparadeControllers.controller('ResultCtrl', ['$scope', 'Api', 'SharedData','webStorage',
-    function ($scope, Api, SharedData,webStorage)
+schoolsparadeControllers.controller('ResultCtrl', ['$scope', 'Api', 'SharedData', 'webStorage',
+    function ($scope, Api, SharedData, webStorage)
     {
-        
-        
-        
-        $scope.loginData=webStorage.get(name);
+
+
+
+        $scope.loginData = webStorage.get(name);
         //console.log(webStorage.get(userData));
         console.log($scope.loginData);
-                
+
         ///There is an issue when page is reloaded all data is lost .Handle by maintaining current class id and exam id on webstorage
         //or redirect to result list
         $scope.classAvg = new Object();
         $scope.classResultName = SharedData.getFormName() + '-' + SharedData.getExam() + ' results';
-        $scope.exam_id=1;
+        $scope.exam_id = 1;
         if (SharedData.getClassId() && SharedData.getExamId) {
-            $scope.exam_id=SharedData.getExamId();
+            $scope.exam_id = SharedData.getExamId();
             $scope.results = Api.appData.getClassResult({
                     method: 'get_class_result',
                     id1: SharedData.getClassId(),
@@ -199,7 +221,7 @@ schoolsparadeControllers.controller('ResultCtrl', ['$scope', 'Api', 'SharedData'
                 var mean = 0;
                 var noSub = 0;
                 var student = new Object();
-                      
+
                 angular.forEach(stdResult, function (value, key) {
                     student[key] = value;
                     if (!isNaN(parseInt(value))) {

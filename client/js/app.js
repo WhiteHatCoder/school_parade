@@ -5,6 +5,7 @@
 var schoolsparadeApp = angular.module('schoolsparadeApp', [
   'ngRoute',
   'ngSanitize',
+
   'webStorageModule',
   'schoolparadeServices',
   'schoolparadeDirectives',
@@ -75,8 +76,11 @@ schoolsparadeApp.constant('appSettings',{
     'BASE_URL':'http://localhost/school_parade/',
     'SCHOOL_API':'http://localhost/school_parade/api' 
 });
+    
+    
    
 schoolsparadeApp.config(['$provide','$routeProvider', function($provide,$routeProvider) {
+    
     $provide.decorator('ngModelDirective', function($delegate) {
         var ngModel = $delegate[0], controller = ngModel.controller;
         ngModel.controller = ['$scope', '$element', '$attrs', '$injector', function(scope, element, attrs, $injector) {
@@ -90,6 +94,7 @@ schoolsparadeApp.config(['$provide','$routeProvider', function($provide,$routePr
         }];
         return $delegate;
     });
+
     $provide.decorator('formDirective', function($delegate) {
         var form = $delegate[0], controller = form.controller;
         form.controller = ['$scope', '$element', '$attrs', '$injector', function(scope, element, attrs, $injector) {
@@ -103,6 +108,7 @@ schoolsparadeApp.config(['$provide','$routeProvider', function($provide,$routePr
         }];
         return $delegate;
     });
+
   $routeProvider.
       when('/', {
         templateUrl: 'client/partials/dashboard.html',
@@ -143,6 +149,13 @@ schoolsparadeApp.config(['$provide','$routeProvider', function($provide,$routePr
       otherwise({
         redirectTo: '/'
       });
+    
+        //Restangular Settings
+   // RestangularProvider.setBaseUrl('http://localhost/school_parade/api');
+    //RestangularProvider.setDefaultRequestParams({ apiKey: '4f847ad3e4b08a2eed5f3b54' })
+
+
+
   }]).
 run( function($rootScope, $location) {
  
@@ -159,6 +172,7 @@ run( function($rootScope, $location) {
       }        
     });
  });
+
 
                   /* config(['$routeProvider',
   function($routeProvider) {

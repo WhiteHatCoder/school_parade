@@ -3,6 +3,7 @@
 <script src="<?php echo(JSLIB.'angular/angular-route.min.js'); ?> "></script>
 <script src="<?php echo(JSLIB.'angular/angular-sanitize.min.js');?>"></script>
 <script src="<?php echo(JSLIB.'angular/angular-resource.min.js');?>"></script>
+<script src="<?php echo(JSLIB.'angular/restangular.min.js'); ?> "></script>
 
 <script src="<?php echo(JS.'app.js'); ?>"></script>
 <script src="<?php echo(JS.'controllers.js');?> "></script>

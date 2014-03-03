@@ -51,6 +51,7 @@ class Teacher_controller extends REST_Controller {
     public function get_all_class_taught()
     {
        //Get all 
+        //if($this->input->post('id2'))
         $this->response($this->teacher_model->get_all_class_taught());  
         
     }
@@ -111,18 +112,18 @@ class Teacher_controller extends REST_Controller {
         foreach($data as $rs)
         {
             $objPHPExcel->getActiveSheet()->SetCellValue('A'.$rowCount, $rs->student_name);           
-            $objPHPExcel->getActiveSheet()->SetCellValue('B'.$rowCount, $rs->Mathematics); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('C'.$rowCount, $rs->English);
-            $objPHPExcel->getActiveSheet()->SetCellValue('D'.$rowCount, $rs->Swahili); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('E'.$rowCount, $rs->Chemistry);
-            $objPHPExcel->getActiveSheet()->SetCellValue('F'.$rowCount, $rs->Biology); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('G'.$rowCount, $rs->Physics);
-            $objPHPExcel->getActiveSheet()->SetCellValue('H'.$rowCount, $rs->Geography); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('I'.$rowCount, $rs->History);
+            $objPHPExcel->getActiveSheet()->SetCellValue('B'.$rowCount, $rs->Mat); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('C'.$rowCount, $rs->Eng);
+            $objPHPExcel->getActiveSheet()->SetCellValue('D'.$rowCount, $rs->Kis); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('E'.$rowCount, $rs->Che);
+            $objPHPExcel->getActiveSheet()->SetCellValue('F'.$rowCount, $rs->Bio); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('G'.$rowCount, $rs->Phy);
+//            $objPHPExcel->getActiveSheet()->SetCellValue('H'.$rowCount, $rs->Geg); 
+            $objPHPExcel->getActiveSheet()->SetCellValue('I'.$rowCount, $rs->Hag);
             $objPHPExcel->getActiveSheet()->SetCellValue('J'.$rowCount, $rs->Cre); 
-            $objPHPExcel->getActiveSheet()->SetCellValue('K'.$rowCount, $rs->BS);
-            $objPHPExcel->getActiveSheet()->SetCellValue('L'.$rowCount, $rs->French);
-            $objPHPExcel->getActiveSheet()->SetCellValue('M'.$rowCount, $rs->Hs);
+            $objPHPExcel->getActiveSheet()->SetCellValue('K'.$rowCount, $rs->Bst);
+//            $objPHPExcel->getActiveSheet()->SetCellValue('L'.$rowCount, $rs->fre);
+            $objPHPExcel->getActiveSheet()->SetCellValue('M'.$rowCount, $rs->Hsc);
             $rowCount++; 
         }
         // Instantiate a Writer to create an OfficeOpenXML Excel .xlsx file

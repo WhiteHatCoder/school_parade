@@ -11,7 +11,7 @@ class Teacher_model extends MY_Model
        $sql="SELECT object_type,object_id,count(*) AS counter FROM sys_user WHERE username='{$sign_data['username']}'";
        $sql.=" AND password='{$sign_data['password']}'"; 
        $temp_data=$this->fetch_data($sql); 
-      var_dump($temp_data);
+      
        foreach($temp_data as $temp){
            $returnData['count']=$temp->counter;
            $returnData['object']=$temp->object_type;
